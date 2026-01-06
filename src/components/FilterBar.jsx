@@ -25,12 +25,33 @@ export default function FilterBar({
         boxShadow: "0 6px 20px rgba(0,0,0,0.04)",
       }}
     >
+      <div style={{ position: "relative", width: "100%" }}>
+      <span
+        style={{
+          position: "absolute",
+          left: 12,
+          top: "50%",
+          transform: "translateY(-50%)",
+          color: "#999",
+          pointerEvents: "none",
+          fontSize: 16,
+        }}
+      >
+        🔍
+      </span>
+
       <input
-        style={{ ...base, width: "100%" }}
+        style={{
+          ...base,
+          width: "100%",
+          paddingLeft: 36, // 아이콘 공간 확보
+        }}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="팝업명/지역/태그 검색"
       />
+    </div>
+
 
       <select style={base} value={status} onChange={(e) => setStatus(e.target.value)}>
         <option value="all">상태(전체)</option>
